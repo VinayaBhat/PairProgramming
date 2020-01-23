@@ -16,9 +16,9 @@ public class LeapyearTest
 {
 
   @Test
-  public void studentNamedPatIsNamedPat() {
-    String name = "Pat";
-
+  public void notaLeapYear(){
+    Leapyear year=new Leapyear();
+    assertThat(year.isLeapYear(2111),equalTo("Not a Leap Year"));
   }
 
 }
