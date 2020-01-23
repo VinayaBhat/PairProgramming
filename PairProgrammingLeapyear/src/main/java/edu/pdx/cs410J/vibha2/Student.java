@@ -7,7 +7,7 @@ import java.util.ArrayList;
 /**                                                                                 
  * This class is represents a <code>Student</code>.                                 
  */                                                                                 
-public class Student extends Human {                                                
+public class Leapyear {
                                                                                     
   /**                                                                               
    * Creates a new <code>Student</code>                                             
@@ -22,25 +22,9 @@ public class Student extends Human {
    * @param gender                                                                  
    *        The PairProgrammingLeapyear's gender ("male" or "female", or "other", case insensitive)
    */                                                                               
-  public Student(String name, ArrayList<String> classes, double gpa, String gender) {
-    super(name);
-  }
-
-  /**                                                                               
-   * All students say "This class is too much work"
-   */
-  @Override
-  public String says() {                                                            
-    throw new UnsupportedOperationException("Not implemented yet");
-  }
-                                                                                    
-  /**                                                                               
-   * Returns a <code>String</code> that describes this                              
-   * <code>Student</code>.                                                          
-   */                                                                               
-  public String toString() {
-    throw new UnsupportedOperationException("Not implemented yet");
-  }
+   public boolean isLeapYear(int year){
+     return false;
+   }
 
   /**
    * Main program that parses the command line, creates a
