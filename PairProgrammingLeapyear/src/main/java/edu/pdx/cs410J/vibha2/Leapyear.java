@@ -5,25 +5,23 @@ package edu.pdx.cs410J.vibha2;
  */                                                                                 
 public class Leapyear {
 
-   public boolean isLeapYear(int year){
+   public void isLeapYear(int year){
       if(year%400==0)
       {
-          return true;
+          System.out.println("Leap Year");
       }
       else if(year%100==0 && year%400!=0)
       {
-          return false;
+          System.out.println("Not a Leap Year");
       }
       else if(year%4==0 && year%100!=0)
       {
-          return true;
+          System.out.println("Leap Year");
       }
       else if(year%4!=0)
       {
-          return false;
+          System.out.println("Not aLeap Year");
       }
-
-      return false;
    }
 
   /**
