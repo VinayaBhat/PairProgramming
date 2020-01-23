@@ -16,9 +16,20 @@ public class LeapyearTest
 {
 
   @Test
-  public void notaLeapYear(){
+  public void notALeapYear(){
     Leapyear year=new Leapyear();
     assertThat(year.isLeapYear(2111),equalTo("Not a Leap Year"));
+  }
+
+  @Test
+  public void isALeapYear(){
+    Leapyear year = new Leapyear();
+    assertThat(year.isLeapYear(2000), equalTo("Leap Year"));
+  }
+  @Test(expected = Exception.class)
+  public void notANumber(){
+    Leapyear year = new Leapyear();
+    assertThat(year.isLeapYear(12345),equalTo("Valid year needed"));
   }
 
 }
