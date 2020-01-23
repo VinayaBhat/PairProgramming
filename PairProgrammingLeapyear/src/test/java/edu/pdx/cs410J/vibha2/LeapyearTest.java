@@ -20,12 +20,27 @@ public class LeapyearTest
     Leapyear year=new Leapyear();
     assertThat(year.isLeapYear(2111),equalTo("Not a Leap Year"));
   }
-
+  @Test
+  public void IsDivisibleBy400(){
+    Leapyear year = new Leapyear();
+    assertThat(year.isLeapYear(2000), equalTo("Leap Year"));
+  }
+  @Test
+  public void IsDivisibleBy100(){
+    Leapyear year = new Leapyear();
+    assertThat(year.isLeapYear(3000), equalTo("Not a Leap Year"));
+  }
+  @Test
+  public void IsDivisibleBy4(){
+    Leapyear year = new Leapyear();
+    assertThat(year.isLeapYear(2016), equalTo("Leap Year"));
+  }
   @Test
   public void isALeapYear(){
     Leapyear year = new Leapyear();
     assertThat(year.isLeapYear(2000), equalTo("Leap Year"));
   }
+
   @Test(expected = Exception.class)
   public void notANumber(){
     Leapyear year = new Leapyear();
