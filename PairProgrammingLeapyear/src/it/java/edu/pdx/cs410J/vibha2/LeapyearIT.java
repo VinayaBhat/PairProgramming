@@ -15,15 +15,23 @@ import static org.hamcrest.core.StringContains.containsString;
 public class LeapyearIT extends InvokeMainTestCase {
   @Test
   public void invokingMainWithNoArgumentsHasExitCodeOf1() {
-    InvokeMainTestCase.MainMethodResult result = invokeMain(Leapyear.class);
+    String[] args={"2","2"};
+    InvokeMainTestCase.MainMethodResult result = invokeMain(Leapyear.class,args);
     assertThat(result.getExitCode(), equalTo(1));
   }
 
   @Test
   public void invokingMainWithNoArgumentsPrintsMissingArgumentsToStandardError() {
-    InvokeMainTestCase.MainMethodResult result = invokeMain(Leapyear.class);
+    InvokeMainTestCase.MainMethodResult result = invokeMain(Leapyear.class,new String[] {});
     assertThat(result.getTextWrittenToStandardError(), containsString("Missing command line arguments"));
   }
+
+  @Test
+  public void witharguments() {
+    InvokeMainTestCase.MainMethodResult result = invokeMain(Leapyear.class,new String[] {"2000"});
+    assertThat(result.getTextWrittenToStandardOut(), containsString("Leap Year"));
+  }
+
 
 
 }

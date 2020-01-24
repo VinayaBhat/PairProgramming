@@ -42,8 +42,13 @@ return str;
    * standard out by invoking its <code>toString</code> method.
    */
   public static void main(String[] args) {
-    System.err.println("Missing command line arguments");
-    System.exit(1);
+      if(args.length!=1) {
+          System.err.println("Missing command line arguments");
+          System.exit(1);
+      }else{
+          Leapyear l=new Leapyear();
+          System.out.println(l.isLeapYear(2000));
+      }
 
 
   }
